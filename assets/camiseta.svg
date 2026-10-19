@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 485" role="img" aria-labelledby="tit">
+<title id="tit">Camiseta lila de A Mi Medida, con forma de letra M</title>
+<defs>
+<linearGradient id="body" x1=".15" y1="0" x2=".84" y2="1" gradientUnits="objectBoundingBox"><stop offset="0" stop-color="#e8d4ff"/><stop offset=".47" stop-color="#cfaff8"/><stop offset="1" stop-color="#b49beb"/></linearGradient>
+<linearGradient id="neck" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#6540b3"/><stop offset="1" stop-color="#482179"/></linearGradient>
+<linearGradient id="cuff" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#7851bb"/><stop offset="1" stop-color="#472677"/></linearGradient>
+</defs>
+<path d="M150 57C187 33 221 95 280 95s93-62 130-38c58 23 92 73 139 126l-76 79-63-59v236q0 20-21 20h-50V279l-53 66q-6 7-13 0l-54-66v180h-49q-21 0-21-20V203l-63 59-76-79c47-53 81-103 140-126Z" fill="url(#body)" stroke="#ad8fd7" stroke-width="1"/>
+<path d="M149 58 85 130l-75 53 76 79 63-59 0 236v0l0-231Z" fill="#ac83e1" opacity=".25"/>
+<path d="m18 173-8 10 76 79 33-31-72-82Z" fill="url(#cuff)"/>
+<path d="m542 173 8 10-76 79-33-31 72-82Z" fill="url(#cuff)"/>
+<path d="M198 44C202 111 232 153 280 155c48-2 78-44 82-111l28 10C389 142 346 187 280 188 214 187 171 142 170 54Z" fill="#fff" opacity=".96"/>
+<path d="M220 57q60 67 120 0c-4 48-22 75-60 75s-56-27-60-75Z" fill="url(#neck)"/>
+<path d="M236 63c26 29 62 31 88 0-10 28-26 39-44 39-20 0-34-11-44-39Z" fill="#a98bdc" opacity=".5"/>
+</svg>
