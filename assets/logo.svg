@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1190 275" role="img" aria-labelledby="logoTitle">
+<title id="logoTitle">A Mi Medida. La moda se adapta a ti.</title>
+<defs><linearGradient id="shirtGrad" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ead6ff"/><stop offset="1" stop-color="#b9a1f0"/></linearGradient></defs>
+<g fill="#291c36" font-family="'Arial Rounded MT Bold',Arial,Helvetica,sans-serif" font-weight="800">
+<text x="20" y="178" font-size="175" letter-spacing="-9">A Mi</text>
+<text x="575" y="178" font-size="175" letter-spacing="-9">edida</text></g>
+<g transform="translate(394 24) scale(.335)">
+<path d="M150 57C187 33 221 95 280 95s93-62 130-38c58 23 92 73 139 126l-76 79-63-59v236q0 20-21 20h-50V279l-53 66q-6 7-13 0l-54-66v180h-49q-21 0-21-20V203l-63 59-76-79c47-53 81-103 140-126Z" fill="url(#shirtGrad)"/>
+<path d="m18 173-8 10 76 79 33-31-72-82Z" fill="#6a3ea7"/>
+<path d="m542 173 8 10-76 79-33-31 72-82Z" fill="#6a3ea7"/>
+<path d="M198 44C202 111 232 153 280 155c48-2 78-44 82-111l28 10C389 142 346 187 280 188 214 187 171 142 170 54Z" fill="#fff"/>
+<path d="M220 57q60 67 120 0c-4 48-22 75-60 75s-56-27-60-75Z" fill="#56308f"/></g>
+<text x="246" y="246" fill="#402f4f" font-size="39" letter-spacing="7.5" font-family="Arial,Helvetica,sans-serif" font-weight="400">La moda se adapta a ti</text>
+</svg>
