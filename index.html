@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f8f6fc">
+<meta name="description" content="A Mi Medida: una nueva manera de descubrir moda, explorar estilos y encontrar opciones para distintos cuerpos.">
+<link rel="icon" href="./assets/camiseta.svg" type="image/svg+xml">
+<title>A Mi Medida | Moda a tu manera</title>
+<style>
+:root{--purple:#6b4bcf;--purple-dark:#412b66;--violet:#866ce0;--lavender:#eee7fd;--cream:#faf8fd;--ink:#2a203a;--muted:#857e91;--line:#ede7f5;--white:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#ece8f4;color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:14px;line-height:1.5}
+button,input,select{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #afa0ea;outline-offset:3px}[hidden]{display:none!important}
+.device{position:relative;width:min(100%,430px);min-height:100dvh;margin:0 auto;background:var(--cream);box-shadow:0 0 70px #3b296e17;padding-bottom:calc(88px + env(safe-area-inset-bottom,0px));overflow:hidden}
+.topbar{position:sticky;top:0;z-index:5;background:#faf8fdf2;backdrop-filter:blur(12px);display:flex;align-items:center;gap:10px;padding:18px 20px 13px;border-bottom:1px solid var(--line)}
+.brand-symbol{width:39px;height:39px;border-radius:13px;background:#eee6ff;display:grid;place-items:center;flex:none}.brand-symbol img{width:31px;height:31px;object-fit:contain}
+.brand-name{font-size:16px;font-weight:850;letter-spacing:-.6px}.brand-meta{font-size:11px;color:var(--muted)}.top-spark{margin-left:auto;background:white;border:1px solid var(--line);width:37px;height:37px;border-radius:50%;display:grid;place-items:center;color:var(--purple);font-size:20px}
+.screen{padding:20px 19px 15px;animation:appear .2s ease}@keyframes appear{from{opacity:.5;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+.greeting{font-size:11px;letter-spacing:.11em;text-transform:uppercase;font-weight:800;color:var(--purple);margin:0 0 10px}
+.hero{background:linear-gradient(145deg,#f1e8fe,#e8e0fc 65%,#ddccf7);border:1px solid #e7dcfa;border-radius:25px;position:relative;padding:24px 21px;min-height:270px;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-70px;top:-60px;width:215px;height:215px;border-radius:50%;border:1px solid #ffffffb0}
+.hero h1{font-size:35px;line-height:1.06;letter-spacing:-1.6px;max-width:220px;margin:0 0 11px;position:relative;z-index:1}
+.hero p{max-width:202px;color:#665979;font-size:12px;margin:0 0 18px;position:relative;z-index:1}
+.hero .shirt-art{position:absolute;right:-35px;top:56px;width:196px;opacity:.96;transform:rotate(-8deg);filter:drop-shadow(0 14px 12px #6b4bcf16)}
+.primary{background:var(--purple);color:white;border:0;border-radius:13px;padding:12px 17px;font-weight:750;box-shadow:0 7px 16px #6b4bcf21;position:relative;z-index:1}
+.outline{background:white;border:1px solid #e1d9f1;color:var(--purple);padding:11px 15px;border-radius:12px;font-weight:750}
+.section-title{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:24px 0 12px}.section-title h2{font-size:18px;margin:0;letter-spacing:-.4px}.section-title span{font-size:11px;color:var(--muted)}
+.brand-card{border-radius:17px;background:#fff;border:1px solid var(--line);padding:17px 14px;display:grid;place-items:center}.brand-card img{width:100%;max-width:340px;max-height:96px}
+.feature{background:#fff;border:1px solid var(--line);border-radius:17px;padding:15px;margin:10px 0;display:flex;gap:12px;align-items:flex-start}.feature-icon{height:36px;width:36px;border-radius:12px;background:#f1ebff;display:grid;place-items:center;font-size:18px;flex:none}
+.feature h3{font-size:13px;margin:0 0 3px}.feature p{font-size:11px;color:var(--muted);margin:0;line-height:1.6}
+.pagehead{margin:4px 0 20px}.pagehead .eyebrow{font-size:11px;color:var(--purple);text-transform:uppercase;letter-spacing:.12em;font-weight:800}.pagehead h1{font-size:27px;letter-spacing:-1px;line-height:1.15;margin:6px 0 7px}.pagehead p{color:var(--muted);font-size:12px;margin:0}
+.form-panel,.hint{background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:flex;flex-direction:column;gap:6px}.field label{font-size:11px;font-weight:750;color:#665c70}
+.field input,.field select,.searchbar,.filter{width:100%;min-width:0;background:#faf9fd;border:1px solid #e5dfed;border-radius:12px;padding:12px 10px;color:var(--ink)}.field input::placeholder{color:#aea8b8}.actions{display:grid;gap:9px;margin-top:17px}
+.hint{margin-top:15px;background:#f5efff;color:#685783;font-size:12px;line-height:1.7}.status{min-height:18px;font-size:12px;color:#32775a;font-weight:700;margin:10px 0 0}
+.searchbar{background:white;margin:4px 0 11px}.filter{background:white}.filter-line{display:flex;gap:9px;margin:0 0 14px}.filter-line select{width:100%}.results{font-size:12px;color:var(--muted);margin:0 0 11px}
+.products{display:grid;grid-template-columns:1fr 1fr;gap:12px}.product{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden}.product-visual{height:138px;display:grid;place-items:center;background:var(--color);position:relative}.product-visual .garment{font-size:64px;filter:drop-shadow(0 6px 4px #33245a12)}.product-style{position:absolute;left:9px;bottom:8px;background:#ffffffdc;color:#756886;border-radius:7px;padding:3px 7px;font-size:10px;font-weight:750}
+.product-copy{padding:11px}.product-copy h3{font-size:12px;min-height:30px;line-height:1.3;margin:0 0 7px}.price{font-weight:800;font-size:13px;margin:0 0 9px}.size-hint{background:#f1edfc;border-radius:7px;padding:5px 6px;font-size:10px;color:#6552ad;display:inline-block}.empty{grid-column:1/-1;background:white;border:1px solid var(--line);border-radius:14px;padding:27px;text-align:center;color:var(--muted)}
+.fineprint{color:#9c94a5;font-size:10px;line-height:1.6;margin:19px 2px}
+.tabbar{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(100%,430px);z-index:10;display:grid;grid-template-columns:repeat(3,1fr);background:#fffffff0;backdrop-filter:blur(12px);border-top:1px solid #ebe4f3;padding:8px 9px calc(10px + env(safe-area-inset-bottom,0px))}
+.tab{background:none;border:0;display:flex;flex-direction:column;gap:4px;align-items:center;padding:7px 4px;color:#9990a3;font-size:10px;font-weight:800;min-height:48px;border-radius:12px}.tab .glyph{font-size:21px;line-height:1.2}.tab.active{color:var(--purple);background:#f4efff}
+@media(min-width:560px){.device{margin:24px auto;border-radius:26px;min-height:calc(100dvh - 48px);border:1px solid #ded6ea}}
+@media(max-width:345px){.hero h1{font-size:30px}.hero .shirt-art{width:160px;right:-40px}.screen{padding-left:13px;padding-right:13px}.product-visual{height:115px}}
+@media(prefers-reduced-motion:reduce){.screen{animation:none}}
+</style>
+</head>
+<body>
+<div class="device">
+<header class="topbar"><span class="brand-symbol"><img src="./assets/camiseta.svg" alt=""></span><div><div class="brand-name">A Mi Medida</div><div class="brand-meta">Tu estilo, a tu manera</div></div><span class="top-spark" aria-hidden="true">✦</span></header>
+<main>
+<section class="screen" id="inicio">
+<p class="greeting">Bienvenido a A Mi Medida</p>
+<div class="hero"><h1>La moda se adapta a ti.</h1><p>Explora prendas, descubre estilos y encuentra opciones para diferentes cuerpos.</p><button class="primary" type="button" data-view="perfil">Comenzar →</button><img class="shirt-art" src="./assets/camiseta.svg" alt=""></div>
+<div class="section-title"><h2>Una moda más diversa</h2><span>Para todos los estilos</span></div>
+<div class="brand-card"><img src="./assets/logo.svg" alt="A Mi Medida. La moda se adapta a ti."></div>
+<div class="section-title"><h2>Descubre a tu manera</h2></div>
+<article class="feature"><span class="feature-icon" aria-hidden="true">◉</span><div><h3>Tu propio estilo</h3><p>Elige lo que más te gusta y crea una experiencia más personal.</p></div></article>
+<article class="feature"><span class="feature-icon" aria-hidden="true">✧</span><div><h3>Más formas de vestir</h3><p>Conoce prendas y alternativas para diferentes ocasiones.</p></div></article>
+<article class="feature"><span class="feature-icon" aria-hidden="true">⌕</span><div><h3>Explorar es más fácil</h3><p>Busca ropa de forma sencilla y descubre nuevas posibilidades.</p></div></article>
+<p class="fineprint">Una propuesta de moda pensada para ofrecer más opciones y mayor inclusión.</p>
+</section>
+
+<section class="screen" id="perfil" hidden>
+<div class="pagehead"><span class="eyebrow">Personaliza tu experiencia</span><h1>Mi perfil</h1><p>Tu estilo empieza por conocerte.</p></div>
+<div class="form-panel">
+<form id="profile-form">
+<div class="form-grid">
+<div class="field"><label for="chest">Pecho (cm)</label><input id="chest" type="number" min="50" max="200" placeholder="Ej. 100" required></div>
+<div class="field"><label for="waist">Cintura (cm)</label><input id="waist" type="number" min="50" max="200" placeholder="Ej. 90" required></div>
+<div class="field"><label for="hips">Cadera (cm)</label><input id="hips" type="number" min="50" max="210" placeholder="Ej. 105" required></div>
+<div class="field"><label for="style">Mi estilo</label><select id="style"><option>Casual</option><option>Formal</option><option>Urbano</option><option>Deportivo</option></select></div>
+</div>
+<div class="actions"><button type="submit" class="primary">Guardar perfil</button><button type="button" class="outline" id="example">Usar ejemplo</button><button type="button" class="outline" id="clear">Borrar datos</button></div>
+<p class="status" id="profile-status" role="status" aria-live="polite"></p>
+</form>
+</div>
+<div class="hint">Tus medidas se guardan únicamente en este navegador. Puedes borrarlas cuando quieras.</div>
+<button class="primary" type="button" data-view="explorar" style="margin-top:16px;width:100%">Explorar prendas →</button>
+</section>
+
+<section class="screen" id="explorar" hidden>
+<div class="pagehead"><span class="eyebrow">Prendas para descubrir</span><h1>Explora tu estilo</h1><p>Encuentra opciones según lo que buscas.</p></div>
+<label for="search" class="field"><span class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden">Buscar prenda</span><input class="searchbar" id="search" type="search" placeholder="Buscar camisa, jean, chaqueta..."></label>
+<div class="filter-line"><select class="filter" id="filter" aria-label="Filtrar por estilo"><option>Todos</option><option>Casual</option><option>Formal</option><option>Urbano</option><option>Deportivo</option></select></div>
+<p class="results" id="results"></p><div class="products" id="products"></div>
+<p class="fineprint">Prendas y precios de ejemplo. Las tallas mostradas son orientativas.</p>
+</section>
+</main>
+<nav class="tabbar" aria-label="Navegación de la app">
+<button type="button" class="tab active" data-view="inicio"><span class="glyph" aria-hidden="true">⌂</span>Inicio</button>
+<button type="button" class="tab" data-view="perfil"><span class="glyph" aria-hidden="true">◎</span>Perfil</button>
+<button type="button" class="tab" data-view="explorar"><span class="glyph" aria-hidden="true">⌕</span>Explorar</button>
+</nav>
+</div>
+<script>
+const products=[
+{name:'Camiseta esencial',category:'Camisetas',style:'Casual',price:79900,visual:'👕',shade:'#e8ddf6',type:'top'},
+{name:'Jean de corte recto',category:'Pantalones',style:'Casual',price:159900,visual:'👖',shade:'#e4eaf5',type:'bottom'},
+{name:'Camisa clásica',category:'Camisas',style:'Formal',price:149900,visual:'👔',shade:'#f4e9e0',type:'top'},
+{name:'Blazer moderno',category:'Chaquetas',style:'Formal',price:289900,visual:'🧥',shade:'#eee1f5',type:'top'},
+{name:'Camiseta oversize',category:'Camisetas',style:'Urbano',price:99900,visual:'👕',shade:'#f2e5ed',type:'top'},
+{name:'Pantalón cargo',category:'Pantalones',style:'Urbano',price:199900,visual:'👖',shade:'#e9e7dc',type:'bottom'},
+{name:'Chaqueta deportiva',category:'Chaquetas',style:'Deportivo',price:189900,visual:'🧥',shade:'#e0efed',type:'top'},
+{name:'Jogger cómodo',category:'Pantalones',style:'Deportivo',price:129900,visual:'👖',shade:'#e9eaf1',type:'bottom'}
+];
+const sizes=[
+{size:'S',chest:94,upperWaist:86,waist:80,hips:98},
+{size:'M',chest:102,upperWaist:94,waist:88,hips:106},
+{size:'L',chest:110,upperWaist:102,waist:98,hips:116},
+{size:'XL',chest:120,upperWaist:112,waist:108,hips:126},
+{size:'2XL',chest:132,upperWaist:124,waist:120,hips:138},
+{size:'3XL',chest:146,upperWaist:138,waist:134,hips:152}
+];
+const $=s=>document.querySelector(s);
+let profile=null;try{const value=JSON.parse(localStorage.getItem('amm-salle-profile'));if(value&&typeof value==='object'&&!Array.isArray(value))profile=value}catch(e){}
+const money=n=>new Intl.NumberFormat('es-CO',{style:'currency',currency:'COP',maximumFractionDigits:0}).format(n);
+function view(name){
+for(const id of ['inicio','perfil','explorar'])$('#'+id).hidden=id!==name;
+for(const button of document.querySelectorAll('.tab')){const active=button.dataset.view===name;button.classList.toggle('active',active);if(active)button.setAttribute('aria-current','page');else button.removeAttribute('aria-current')}
+if(name==='explorar')render();window.scrollTo(0,0)
+}
+function suggest(item){
+if(!profile||![profile.chest,profile.waist,profile.hips].every(v=>Number(v)>0))return 'Crea tu perfil';
+const match=sizes.find(s=>item.type==='bottom' ? profile.waist<=s.waist&&profile.hips<=s.hips : profile.chest<=s.chest&&profile.waist<=s.upperWaist);
+return match?'Talla sugerida: '+match.size:'Sin coincidencia';
+}
+function render(){
+const query=$('#search').value.toLocaleLowerCase('es').trim(),style=$('#filter').value;
+const filtered=products.filter(p=>(p.name+' '+p.category).toLocaleLowerCase('es').includes(query)&&(style==='Todos'||p.style===style));
+$('#results').textContent=filtered.length+' prendas';
+$('#products').innerHTML=filtered.length?filtered.map(p=>'<article class="product"><div class="product-visual" style="--color:'+p.shade+'"><span class="garment" role="img" aria-label="'+p.category+'">'+p.visual+'</span><span class="product-style">'+p.style+'</span></div><div class="product-copy"><h3>'+p.name+'</h3><p class="price">'+money(p.price)+'</p><span class="size-hint">'+suggest(p)+'</span></div></article>').join(''):'<p class="empty">No encontramos prendas con esos filtros.</p>';
+}
+function fill(){if(profile){$('#chest').value=profile.chest||'';$('#waist').value=profile.waist||'';$('#hips').value=profile.hips||'';$('#style').value=profile.style||'Casual'}}
+document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>view(b.dataset.view)));
+$('#search').addEventListener('input',render);$('#filter').addEventListener('change',render);
+$('#profile-form').addEventListener('submit',e=>{
+e.preventDefault();
+profile={chest:Number($('#chest').value),waist:Number($('#waist').value),hips:Number($('#hips').value),style:$('#style').value};
+try{localStorage.setItem('amm-salle-profile',JSON.stringify(profile));$('#profile-status').textContent='Perfil guardado';}catch(e){$('#profile-status').textContent='No fue posible guardar los datos';}
+render();
+});
+$('#example').addEventListener('click',()=>{$('#chest').value=100;$('#waist').value=90;$('#hips').value=105;$('#style').value='Casual';$('#profile-status').textContent='Datos listos. Guarda tu perfil.'});
+$('#clear').addEventListener('click',()=>{profile=null;$('#profile-form').reset();try{localStorage.removeItem('amm-salle-profile')}catch(e){}$('#profile-status').textContent='Datos eliminados';render()});
+fill();render();view('inicio');
+</script>
+</body>
+</html>
